@@ -10,5 +10,3 @@ app.use(routes)
 
 
 app.listen(PORT)
-
-75101873000190

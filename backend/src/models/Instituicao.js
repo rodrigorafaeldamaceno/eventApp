@@ -1,8 +1,8 @@
 const moongose = require('../database/mongo')
 
 const InstitutionSchema = moongose.Schema({
-  name: String,
+  nome: String,
   cnpj: String
 })
 
-module.exports = moongose.model('Institution', InstitutionSchema)
+module.exports = moongose.model('Instituicao', InstitutionSchema)

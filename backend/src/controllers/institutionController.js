@@ -1,42 +1,42 @@
-const Institution = require('../models/Institution')
+const Instituicao = require('../models/Instituicao')
 
 module.exports = {
   async store(req, res) {
-    const { name, cnpj } = req.body
+    const { nome, cnpj } = req.body
 
-    const institution = await Institution.create({
-      name,
+    const instituicao = await Instituicao.create({
+      nome,
       cnpj
     })
 
-    return res.json(institution)
+    return res.json(instituicao)
   },
   async index(req, res) {
-    const institutions = await Institution.find()
+    const instituicoes = await Instituicao.find()
 
-    return res.json(institutions)
+    return res.json(instituicoes)
   },
   async show(req, res) {
     const { id } = req.params
-    const institution = await Institution.findById(id)
+    const instituicao = await Instituicao.findById(id)
 
-    res.json(institution)
+    res.json(instituicao)
   },
   async update(req, res) {
 
     console.log(req.body)
-    const { id, name, cnpj } = req.body
+    const { id, nome, cnpj } = req.body
 
-    const institution = await Institution.findById(id)
+    const instituicao = await Instituicao.findById(id)
 
-    if (!institution)
+    if (!instituicao)
       return res.status(501).json({ error: 'Institution not found' })
 
-    institution.name = name
-    institution.cnpj = cnpj
-    institution.save()
+    instituicao.nome = nome
+    instituicao.cnpj = cnpj
+    instituicao.save()
 
-    return res.json(institution)
+    return res.json(instituicao)
   },
   async delete(req, res) { }
 }
