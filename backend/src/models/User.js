@@ -5,7 +5,8 @@ const UserSchema = moongose.Schema({
   pass: {
     type: String,
     select: false
-  }
+  },
+  type: Number,
 })
 
 module.exports = moongose.model('User', UserSchema)

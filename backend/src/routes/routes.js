@@ -5,6 +5,8 @@ const routes = express.Router()
 const institutionController = require('../controllers/institutionController')
 const userController = require('../controllers/userController')
 const pessoaController = require('../controllers/pessoaController')
+const eventoController = require('../controllers/EventoController')
+
 
 routes.get('/', (req, res) => {
   res.json({ status: 'ok' })
@@ -30,5 +32,11 @@ routes.post('/pessoa', pessoaController.store)
 routes.get('/pessoa', pessoaController.index)
 //routes.post('/pessoa', pessoaController.show)
 
+
+// Evento
+routes.post('/evento/:instituicao_id', eventoController.store)
+routes.get('/evento/', eventoController.index)
+routes.get('/evento/:id', eventoController.show)
+routes.delete('/evento/:id', eventoController.delete)
 
 module.exports = routes

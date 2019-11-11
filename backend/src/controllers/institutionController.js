@@ -23,9 +23,9 @@ module.exports = {
     res.json(instituicao)
   },
   async update(req, res) {
-
-    console.log(req.body)
-    const { id, nome, cnpj } = req.body
+    
+    const { id } = req.params
+    const { nome, cnpj } = req.body
 
     const instituicao = await Instituicao.findById(id)
 

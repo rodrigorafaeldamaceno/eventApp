@@ -10,7 +10,7 @@ module.exports = {
     return res.json(pessoa)
   },
   async index(req, res) {
-    const pessoas = await Pessoa.find()
+    const pessoas = await Pessoa.find().populate('user').exec()
 
     return res.json(pessoas)
   },

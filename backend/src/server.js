@@ -5,7 +5,6 @@ const app = express()
 const PORT = 3333
 
 app.use(express.json())
-app.use(express.urlencoded())
 app.use(routes)
 
 
