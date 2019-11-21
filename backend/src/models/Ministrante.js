@@ -4,7 +4,7 @@ const MinistranteSchema = mongoose.Schema({
   titulacao: String,
   descricao: String,
   pessoa: {
-    types: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Pessoa'
   }
 })

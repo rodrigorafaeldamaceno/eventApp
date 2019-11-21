@@ -1,5 +1,7 @@
+require('dotenv').config()
+
 const mongoose = require('mongoose')
-const { user, pass, database } = require('../../config/mongo.json')
+const { username, password, database, host } = require('../../config/mongo')
 
 /*
 // Atlas
@@ -15,7 +17,7 @@ mongoose.set('useFindAndModify', false);
 */
 
 // local
-module.exports = mongoose.connect('mongodb://localhost/eventApp', {
+module.exports = mongoose.connect(`mongodb://${host}/${database}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

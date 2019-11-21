@@ -21,7 +21,7 @@ module.exports = {
     res.json(evento)
   },
   async index(req, res) {
-    const eventos = await Evento.find().populate('instituicao').exec()
+    const eventos = await Evento.find().populate('instituicao',).exec()
 
     return res.json(eventos)
   },
