@@ -8,6 +8,8 @@ const pessoaController = require('../controllers/pessoaController')
 const eventoController = require('../controllers/EventoController')
 const MinistranteController = require('../controllers/MinistranteController')
 const AtividadeController = require('../controllers/AtividadeController')
+const PacoteController = require('../controllers/PacoteControleler')
+
 
 routes.get('/', (req, res) => {
   res.json({ status: 'ok' })
@@ -49,6 +51,13 @@ routes.post('/ministrante/:instituicao_id', MinistranteController.store)
 routes.get('/ministrante/', MinistranteController.index)
 routes.get('/ministrante/:id', MinistranteController.show)
 routes.delete('/ministrante/:id', MinistranteController.delete)
+
+// Atividade
+routes.post('/pacote/', PacoteController.store)
+routes.get('/pacote/', PacoteController.index)
+routes.get('/pacote/:id', PacoteController.show)
+routes.delete('/pacote/:id', PacoteController.delete)
+
 
 
 module.exports = routes
