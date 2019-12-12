@@ -1,0 +1,47 @@
+
+<div class="example-container">
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="inicio" placeholder="Data de inicio">
+        <mat-datepicker-toggle matSuffix [for]="inicio"></mat-datepicker-toggle>
+        <mat-datepicker #inicio></mat-datepicker>
+    </mat-form-field>
+
+    
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="fim" placeholder="Data de fim">
+        <mat-datepicker-toggle matSuffix [for]="fim"></mat-datepicker-toggle>
+        <mat-datepicker #fim></mat-datepicker>
+    </mat-form-field>
+
+    
+
+
+
+    <mat-form-field>
+        <textarea matInput placeholder="Descrição do evento"></textarea>
+    </mat-form-field>
+    
+
+    <mat-form-field>
+
+        <input matInput placeholder="Logo">
+    </mat-form-field>
+    
+    <mat-form-field>
+
+        <input matInput placeholder="Local">
+    </mat-form-field>
+    
+    <mat-form-field>
+            <mat-select placeholder="Selecione a instituição">
+                    <mat-option value="option">instituição 1</mat-option>
+                    <mat-option value="option">instituição 2</mat-option>
+                    <mat-option value="option">instituição 3</mat-option>
+            
+            </mat-select>
+          </mat-form-field>
+          <button mat-stroked-button>Cadastrar</button>
+</div>
+

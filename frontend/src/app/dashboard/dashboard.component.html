@@ -1,0 +1,31 @@
+<button mat-button [matMenuTriggerFor]="animals">Opções</button>
+
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="instituicao">Instituicao</button>
+  <button mat-menu-item [matMenuTriggerFor]="evento">Evento</button>
+  <button mat-menu-item [matMenuTriggerFor]="pessoa">Pessoa</button>
+  
+</mat-menu>
+
+<mat-menu #instituicao="matMenu">
+  <button mat-menu-item [routerLink]="['/dashboard/cadastro-instituicao']">Cadastro</button>
+  <button mat-menu-item>Listar</button>
+</mat-menu>
+
+<mat-menu #evento="matMenu">
+  <button mat-menu-item [routerLink]="['/dashboard/cadastro-evento']">Cadastro evento</button>
+  <button mat-menu-item [routerLink]="['/dashboard/cadastro-pacote']">Cadastro pacote</button>
+  
+  <button mat-menu-item>Listar evento</button>
+  <button mat-menu-item>Listar pacote</button>
+  
+</mat-menu>
+
+<mat-menu #pessoa="matMenu">
+  <button mat-menu-item [routerLink]="['/dashboard/cadastro-pessoa']">Cadastro</button>
+  <button mat-menu-item>Listar</button>
+</mat-menu>
+
+
+
+<router-outlet></router-outlet>
